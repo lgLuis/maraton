@@ -4,9 +4,9 @@ Te proponemos 10 ejercicios de JS para resolver de forma individual. Si te traba
 Exitos! Happy coding! - Guayerd
 
 ------
-----------         RELIZADOS          01 03 06 09
--------------      INCOMPLETOS        02 04 05 07
-----------         SIN COMENZAR       08 10 
+----------         RELIZADOS          01 02 03 04 05 06 08 09
+-------------      INCOMPLETOS        07
+----------         SIN COMENZAR       10 
 ------
 
 
@@ -34,10 +34,10 @@ ej2Nombre.addEventListener("focus", focusHandler);
 ej2Resultado.addEventListener("blur", blurHandler);
 
 function focusHandler(e){
-  ej2Nombre.innerText = "   "; // antes estaba El input nombre tiene el foco"
-}
+  ej2Resultado.innerText = "El input nombre tiene el foco.-"; // antes estaba El input nombre tiene el foco"
+}// me ayudadaron estes era ej2Nombre
 function blurHandler(e){
-  ej2Resultado.innerText = ".....";
+  ej2Resultado.innerText = "";
 }
 
 /*
@@ -84,11 +84,13 @@ function toShow(){
   let mostrarMail       =mail.value;
   let mostrarMensaje    =mens.value;
   show.innerText=`Ahi el mail:   ${mostrarMail} ahi el mensaje:   ${mostrarMensaje}`
+  mail.value="";  //solo eso para dejar en blanco
+  mens.value="";
 }
 
-function clear (){
-        classList.remove()
-}
+//function clear (){
+//        classList.remove()
+//}
 
 /*
 Ej - 5: Crear un div con 2 inputs y un boton "Sumar"
@@ -103,10 +105,19 @@ let inp2      =document.querySelector(".input2");
 let btSuma    =document.querySelector(".sumar");
 
 btSuma.addEventListener("click", sumatoria);
-
+/*
 function sumatoria(){
   let rdo             =parseInt( inp1.value)+parseInt( inp2.value);
   divRdo.innerText    =`El rdo es la suma es ${rdo}`
+}
+*/
+function sumatoria(){
+  if(isNaN(inp1.value)||isNaN(inp2.value)){
+    divRdo.innerText    ="INGRESO ERRÓNEO"
+  }else{
+    let rdo             =parseInt( inp1.value)+parseInt( inp2.value);
+    divRdo.innerText    =`El rdo es la suma es ${rdo}`
+  }
 }
 
 
@@ -154,7 +165,7 @@ momento.forEach(function(instante){
 let rdo             =document.querySelector(".ej7-resultado");
 
 
-
+///   ??????????????????????????????
 
 
 
@@ -166,6 +177,20 @@ Mostrar en div.ej8-resultado "OK" o "Error".
  El form esta creado en el div.ej8
 */
 localStorage.setItem("password","js2020"); //Este es el password que deben comparar con el ingreso del usuario
+
+let pass    =document.querySelector("#password");//  es un ID
+let boto    =document.querySelector(".ej8 button"); //NO HAY ID ME POSICIONO EN EL EJ8 y su button
+let resu    =document.querySelector(".ej8-resultado");
+
+boto.addEventListener("click", botoHandler);
+
+function botoHandler(){
+  if(localStorage.getItem("password")===pass.value){
+    resu.innerText="OKI DOKI Bienvenido/a";
+  }else{                      // la contraseña es    js2020   !!!!!!!!!
+    resu.innerText="3RRoR.-";
+  }
+}
 
 /*
 Ej - 9: Mostrar en el div.ej9-resultado el listado de usuarios que se encuentra en el array 
@@ -251,4 +276,10 @@ Ej - 10: Nuestro cliente es una empresa de marketing que busca generar una base 
   2) Todos los datos son requeridos. Evitar cargar datos vacios.
   3) Evitar cargar datos si el email ya existe en el array de contactos.
   4) En todos los casos, informar de forma clara al usuario si hay problemas de validación de datos.
-*/
+
+  Paciencia: RAE
+  Capacidad de padecer o soportar algo sin alterarse.
+  Constancia: RAE
+  Firmeza y perseverancia del ánimo en las resoluciones y en los propósitos.
+
+  */
