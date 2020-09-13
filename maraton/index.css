@@ -31,3 +31,10 @@ body {
   font-size: large;
   color: black;
 }
+
+.ej10-form{
+  border: 2px solid red;
+}
+.ej10-resultado{
+  border: 2px solid blue;
+}

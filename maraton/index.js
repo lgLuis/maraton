@@ -250,10 +250,10 @@ usuarios.forEach(function(usuario){
 divContenedor.innerHTML=juntarUsuarios;
 
 
-
-
 /*
-Ej - 10: Nuestro cliente es una empresa de marketing que busca generar una base de datos de contactos para poder vender productos. Debemos crear para ellos un formulario de carga con los siguientes datos:
+Ej - 10: Nuestro cliente es una empresa de marketing que busca generar
+una base de datos de contactos para poder vender productos. 
+Debemos crear para ellos un formulario de carga con los siguientes datos:
 
   - Nombre
   - Email
@@ -281,5 +281,55 @@ Ej - 10: Nuestro cliente es una empresa de marketing que busca generar una base 
   Capacidad de padecer o soportar algo sin alterarse.
   Constancia: RAE
   Firmeza y perseverancia del ánimo en las resoluciones y en los propósitos.
+ */
+let divParaForm         =document.querySelector(".ej10-form");
+let form                =document.createElement("form");
 
-  */
+let inputNombre         =document.createElement("input");
+inputNombre.type        ="text";
+inputNombre.placeholder ="NOMBRE..."
+
+let inputTel            =document.createElement("input");
+inputTel.type           ="number";
+
+let selectHorario       =document.createElement("select");
+let opt01               =document.createElement("option");
+let opt02               =document.createElement("option");
+let opt03               =document.createElement("option");
+opt01.innerText         ="MAÑANA";
+opt02.innerText         ="TARDE";
+opt03.innerText         ="NOCHE";
+
+selectHorario.appendChild(opt01);
+selectHorario.appendChild(opt02);
+selectHorario.appendChild(opt03);
+
+form.appendChild(inputNombre);
+form.appendChild(inputTel);
+
+divParaForm.appendChild(form);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
