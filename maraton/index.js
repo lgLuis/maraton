@@ -5,8 +5,8 @@ Exitos! Happy coding! - Guayerd
 
 ------
 ----------         RELIZADOS          01 02 03 04 05 06 08 09
--------------      INCOMPLETOS        07
-----------         SIN COMENZAR       10 
+-------------      INCOMPLETOS        07 10
+----------         SIN COMENZAR        
 ------
 
 
@@ -282,6 +282,8 @@ Debemos crear para ellos un formulario de carga con los siguientes datos:
   Constancia: RAE
   Firmeza y perseverancia del ánimo en las resoluciones y en los propósitos.
  */
+/*
+// 01-COMPRENDIENDO LO BÁSICO.
 let divParaForm         =document.querySelector(".ej10-form");
 let form                =document.createElement("form");
 
@@ -291,6 +293,7 @@ inputNombre.placeholder ="NOMBRE..."
 
 let inputTel            =document.createElement("input");
 inputTel.type           ="number";
+inputTel.placeholder    ="TELEFONO";
 
 let selectHorario       =document.createElement("select");
 let opt01               =document.createElement("option");
@@ -308,17 +311,116 @@ form.appendChild(inputNombre);
 form.appendChild(inputTel);
 
 divParaForm.appendChild(form);
+divParaForm.appendChild(selectHorario);
+*/
+/*
+// 02- FORMULARIOS
+let divParaForm         =document.querySelector(".ej10-form");
+let form                =document.createElement("form");
+
+let inputNombre         =document.createElement("input");
+inputNombre.type        ="text";
+inputNombre.placeholder ="NOMBRE..."
+
+let inputTel            =document.createElement("input");
+inputTel.type           ="number";
+inputTel.placeholder    ="TELEFONO";
+
+let inputMail           =document.createElement("input");
+inputMail.placeholder   ="MAIL";
+
+form.appendChild(inputNombre);
+form.appendChild(inputTel);
+form.appendChild(inputMail);
+
+let selectHorario       =document.createElement("select");
+let opt01               =document.createElement("option");
+let opt02               =document.createElement("option");
+let opt03               =document.createElement("option");
+opt01.innerText         ="MAÑANA";
+opt02.innerText         ="TARDE";
+opt03.innerText         ="NOCHE";
+selectHorario.appendChild(opt01);
+selectHorario.appendChild(opt02);
+selectHorario.appendChild(opt03);
+
+let selectProduc        =document.createElement("select");
+let opt01P              =document.createElement("option");
+let opt02P              =document.createElement("option");
+let opt03P              =document.createElement("option");
+opt01P.innerText        ="XBOX";
+opt02P.innerText        ="PS4";
+opt03P.innerText        ="NINTENDO SWITCH";
+selectProduc.appendChild(opt01P);
+selectProduc.appendChild(opt02P);
+selectProduc.appendChild(opt03P);
+
+divParaForm.appendChild(form);
+divParaForm.appendChild(selectHorario);
+divParaForm.appendChild(selectProduc);
+*/
+
+let divParaForm          =document.querySelector(".ej10-form");
+let form                 =document.createElement("form");
+
+let inputNombre          =document.createElement("input");
+inputNombre.type         ="text";
+inputNombre.placeholder  ="NOMBRE..."
+
+let inputTel             =document.createElement("input");
+inputTel.type            ="number";
+inputTel.placeholder     ="TELEFONO";
+
+let inputMail            =document.createElement("input");
+inputMail.placeholder    ="MAIL";
+
+let selectHorario        =document.createElement("select");
+let optH01               =document.createElement("option");
+let optH02               =document.createElement("option");
+let optH03               =document.createElement("option");
+optH01.innerText         ="MAÑANA";
+optH02.innerText         ="TARDE";
+optH03.innerText         ="NOCHE";
+selectHorario.appendChild(optH01);
+selectHorario.appendChild(optH02);
+selectHorario.appendChild(optH03);
+
+let selectProduc        =document.createElement("select");
+let optP01              =document.createElement("option");
+let optP02              =document.createElement("option");
+let optP03              =document.createElement("option");
+optP01.innerText        ="XBOX";
+optP02.innerText        ="PS4";
+optP03.innerText        ="NINTENDO SWITCH";
+selectProduc.appendChild(optP01);
+selectProduc.appendChild(optP02);
+selectProduc.appendChild(optP03);
+
+let botonSave           =document.createElement("button");
+botonSave.innerText     ="GUARDAR";
+botonSave.type          ="submit";
+
+let botonFinish         =document.createElement("button");
+botonFinish.innerText   ="FINALIZAR";
 
 
+form.appendChild(inputNombre);
+form.appendChild(inputTel);
+form.appendChild(inputMail);
+form.appendChild(selectHorario);
+form.appendChild(selectProduc);
+form.appendChild(botonSave);
+form.appendChild(botonFinish);
 
+divParaForm.appendChild(form);
 
+let contactos=[];
+if(localStorage.getItem("contactos")){
+  contactos             =JSON.parse(localStorage.getItem(contactos))
+};
 
-
-
-
-
-
-
+botonSave.addEventListener("click", btnSaveHandler);
+botonFinish.addEventListener("click", btnFiishHandler);
 
 
 
